@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Release or Hold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+@page{ size: 594mm 841mm; margin: 0; }
+
+:root{
+  --ink:#0f1a1f; --ink2:#3f4e55; --ink3:#71818a;
+  --paper:#ffffff; --tint:#eef2f3; --rule:#c8d3d6;
+  --blue:#14607d; --blue-l:#e3eff4;
+  --red:#a83a2c; --red-l:#f8e9e6;
+  --sans:"Archivo",system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+  --mono:"IBM Plex Mono",monospace;
+  --t1:24mm; --t2:7.4mm; --head:6.4mm; --body:6.1mm; --small:5.3mm; --tiny:4.2mm;
+  --num:14mm; --hero:20mm;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#5a6a70;font-family:var(--serif)}
+
+.bar{position:sticky;top:0;z-index:50;background:#0f1a1f;color:#fff;padding:13px 20px;
+  display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-family:var(--sans);font-size:14px}
+.bar b{font-weight:700}
+.bar kbd{font-family:var(--mono);background:#2c3a41;padding:2px 7px;border-radius:3px;font-size:13px}
+.bar button{font-family:var(--sans);font-weight:600;font-size:14px;background:#2a9bc4;color:#04222c;
+  border:0;border-radius:4px;padding:8px 16px;cursor:pointer}
+.bar button:hover{background:#4fb4d8}
+.bar .note{color:#9fb2ba;font-size:13px}
+.stage{padding:26px 16px 60px;display:flex;justify-content:center}
+.scaler{transform-origin:top center}
+
+.poster{width:594mm;height:841mm;background:var(--paper);color:var(--ink);position:relative;overflow:hidden}
+.poster div,.poster svg{position:absolute}
+.poster b,.poster strong,.poster em,.poster br,.poster img,.poster span,.poster u{position:static}
+.poster u{text-decoration:underline;text-decoration-thickness:.5mm;text-underline-offset:.9mm;text-decoration-skip-ink:none}
+.poster .bul{position:static;padding-left:5.6mm;text-indent:-5.6mm;margin-bottom:2.4mm}
+
+.title{font-family:var(--sans);font-weight:800;font-size:var(--t1);line-height:.95;letter-spacing:-.02em}
+.subtitle{font-family:var(--sans);font-weight:600;font-size:var(--t2);line-height:1.2;color:var(--ink2)}
+.byline{font-family:var(--mono);font-weight:500;font-size:4.4mm;color:var(--ink3)}
+.head{font-family:var(--sans);font-weight:700;font-size:var(--head);letter-spacing:.03em}
+.headnum{font-family:var(--mono);font-weight:600;font-size:var(--head)}
+.body{font-family:var(--serif);font-size:var(--body);line-height:1.34}
+.small{font-family:var(--serif);font-size:var(--small);line-height:1.32;color:var(--ink2)}
+.cap{font-family:var(--mono);font-weight:500;font-size:var(--tiny);color:var(--ink3);line-height:1.3}
+.num{font-family:var(--sans);font-weight:800;font-size:var(--num);line-height:.92;letter-spacing:-.02em}
+b,strong{font-weight:600} em{font-style:italic}
+.imgbox{overflow:hidden;background:#e5ebed}
+.imgbox img{display:block;width:100%;height:100%;object-fit:contain}
+.imgbox.crop img{object-fit:cover}
+
+@media print{
+  body{background:#fff}
+  .bar{display:none}
+  .stage{padding:0;display:block}
+  .scaler{transform:none!important}
+  .poster{box-shadow:none}
+}
+@media screen{ .poster{box-shadow:0 10px 50px rgba(0,0,0,.45)} }
+</style>
+
+</head>
+<body>
+<div class="bar">
+  <b>Постер A1 · 594 × 841 мм</b>
+  <span class="note">PDF: <kbd>Ctrl</kbd>+<kbd>P</kbd> → «Сохранить как PDF» → бумага <b>A1</b>, поля «Нет», включить фоновую графику</span>
+  <button id="pr" type="button">Открыть печать</button>
+</div>
+
+<div class="stage">
+<div class="scaler" id="scaler">
+<div class="poster" id="poster">
+
+  <!-- ============ 1 · TITLE  y20 h76 ============ -->
+  <div style="left:20mm;top:20mm;width:554mm;height:76mm;background:var(--tint)"></div>
+  <div style="left:20mm;top:20mm;width:554mm;height:2.8mm;background:var(--ink)"></div>
+  <div style="left:20mm;top:20mm;width:5mm;height:76mm;background:var(--blue)"></div>
+  <div class="title" style="left:34mm;top:33mm;width:250mm">Release or Hold?</div>
+  <div class="subtitle" style="left:34mm;top:60mm;width:330mm">
+    The Engineering Ethics Dilemma of the Aktobe Reservoir<br>During the 2024 Floods
+  </div>
+  <div class="byline" style="left:34mm;top:83mm;width:330mm">
+    Rassul Zeinulla · Batyrkhan Zharov | Nazarbayev University · Engineering Ethics
+  </div>
+  <div style="left:392mm;top:31mm;width:168mm;height:54mm;border-left:.5mm solid var(--rule);padding-left:9mm">
+    <div class="cap" style="position:static;margin-bottom:3mm">THE QUESTION</div>
+    <div class="body" style="position:static;font-size:5.2mm">
+      When floodwater arrives faster than a dam can pass it, engineers must choose who bears the risk — the structure, or the people living below it.
+    </div>
+  </div>
+
+  <!-- ============ 01 · WHAT THE ENGINEERS WERE FACING  y103..268 ============ -->
+  <div class="headnum" style="left:20mm;top:103mm;color:var(--blue)">01</div>
+  <div class="head" style="left:34mm;top:103mm">What the engineers were facing</div>
+
+  <!-- lead: not forecast -->
+  <div style="left:20mm;top:113mm;width:554mm;height:40mm;background:var(--tint);border-left:1.4mm solid var(--red)"></div>
+  <div class="body" style="left:28mm;top:118mm;width:322mm;font-weight:600">
+    The engineers were not prepared. The danger was never forecast.
+  </div>
+  <div class="small" style="left:28mm;top:127mm;width:322mm">
+    Snow was not the problem. In spring 2024 the snow in the reservoir's catchment held <b>97 % of the normal</b> water. In 2023 it held <b>130 %</b> — and nothing happened. On 4 March Kazhydromet even reported <b>16–68 % less</b> snow water than normal in the Ilek basin.
+  </div>
+  <div class="body" style="left:360mm;top:118mm;width:206mm;font-weight:600;color:var(--red)">
+    So the problem was not <em>how much</em> water came.
+  </div>
+  <div class="body" style="left:360mm;top:128mm;width:206mm;font-weight:600;color:var(--red)">
+    It was <em>how fast</em> it came.
+  </div>
+  <div class="cap" style="left:360mm;top:141mm;width:206mm">
+    Kazhydromet, spring forecast 04.03.2024 and annual snow bulletin 2024
+  </div>
+
+  <!-- five causes -->
+  <div class="cap" style="left:20mm;top:159mm;width:554mm;color:var(--blue)">FIVE CAUSES THAT CAME TOGETHER</div>
+
+  <div style="left:20mm;top:165mm;width:107.6mm;height:72mm;border-top:1.2mm solid var(--blue);padding-top:4mm">
+    <div class="num" style="position:static;font-size:8mm;color:var(--blue)">1</div>
+    <div class="body" style="position:static;font-weight:600;margin-top:2mm">Sudden thaw, 24 March</div>
+    <div class="small" style="position:static;margin-top:2.5mm;font-size:4.9mm">
+      The weather turned warm very fast. The snow did not melt slowly over weeks — it melted almost at once.
+    </div>
+    <div class="cap" style="position:static;margin-top:3mm;font-size:3.9mm">
+      “On 24 March it became warm suddenly and the snow began to melt.” — akim of Kobda district
+    </div>
+  </div>
+
+  <div style="left:131.6mm;top:165mm;width:107.6mm;height:72mm;border-top:1.2mm solid var(--blue);padding-top:4mm">
+    <div class="num" style="position:static;font-size:8mm;color:var(--blue)">2</div>
+    <div class="body" style="position:static;font-weight:600;margin-top:2mm">Frozen ground</div>
+    <div class="small" style="position:static;margin-top:2.5mm;font-size:4.9mm">
+      The soil went into winter wet, then froze deep. Meltwater could not soak in at all. Almost all of it ran over the surface.
+    </div>
+    <div class="cap" style="position:static;margin-top:3mm;font-size:3.9mm">
+      This is what turns a normal snowpack into an extreme inflow.
+    </div>
+  </div>
+
+  <div style="left:243.2mm;top:165mm;width:107.6mm;height:72mm;border-top:1.2mm solid var(--blue);padding-top:4mm">
+    <div class="num" style="position:static;font-size:8mm;color:var(--blue)">3</div>
+    <div class="body" style="position:static;font-weight:600;margin-top:2mm">Ice crust, up to 6.6 cm</div>
+    <div class="small" style="position:static;margin-top:2.5mm;font-size:4.9mm">
+      Kazhydromet recorded an ice crust on the soil on 4 March, including in the Ilek basin.
+    </div>
+    <div class="cap" style="position:static;margin-top:3mm;font-size:3.9mm">
+      The crust works like a plastic sheet: water does not stop, it slides straight into the rivers.
+    </div>
+  </div>
+
+  <div style="left:354.8mm;top:165mm;width:107.6mm;height:72mm;border-top:1.2mm solid var(--blue);padding-top:4mm">
+    <div class="num" style="position:static;font-size:8mm;color:var(--blue)">4</div>
+    <div class="body" style="position:static;font-weight:600;margin-top:2mm">Rain on melting snow</div>
+    <div class="small" style="position:static;margin-top:2.5mm;font-size:4.9mm">
+      Two days of rain fell while the snow was already melting.
+    </div>
+    <div class="cap" style="position:static;margin-top:3mm;font-size:3.9mm">
+      Kazhydromet had described this exact scenario three weeks earlier: fast warming plus heavy March rain can create a snowmelt-and-rain flood.
+    </div>
+  </div>
+
+  <div style="left:466.4mm;top:165mm;width:107.6mm;height:72mm;border-top:1.2mm solid var(--blue);padding-top:4mm">
+    <div class="num" style="position:static;font-size:8mm;color:var(--blue)">5</div>
+    <div class="body" style="position:static;font-weight:600;margin-top:2mm">Runoff from the steppe</div>
+    <div class="small" style="position:static;margin-top:2.5mm;font-size:4.9mm">
+      Water did not stay in the river channels. It moved as a wide front across the open steppe.
+    </div>
+    <div class="cap" style="position:static;margin-top:3mm;font-size:3.9mm">
+      “On 26 March meltwater from the steppe began to flood the city.” — akim of Aktobe
+    </div>
+  </div>
+
+  <!-- what it led to -->
+  <div style="left:20mm;top:242mm;width:554mm;height:28mm;background:var(--ink)"></div>
+  <div class="cap" style="left:27mm;top:246mm;color:#8fa6b0">WHAT IT LED TO</div>
+  <div style="left:27mm;top:253mm;width:128mm">
+    <div class="num" style="position:static;font-size:9mm;color:#fff">1,700 m³/s</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;color:#9fb2ba;font-size:3.6mm">peak inflow — operator's account</div>
+  </div>
+  <div style="left:163mm;top:253mm;width:104mm">
+    <div class="num" style="position:static;font-size:9mm;color:#fff">~12 hours</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;color:#9fb2ba;font-size:3.6mm">for the reservoir to fill</div>
+  </div>
+  <div style="left:277mm;top:253mm;width:152mm">
+    <div class="num" style="position:static;font-size:9mm;color:#fff">200 million m³</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;color:#9fb2ba;font-size:3.6mm">inflow 27–29 March = 80 % of design volume</div>
+  </div>
+  <div style="left:439mm;top:253mm;width:128mm">
+    <div class="num" style="position:static;font-size:9mm;color:#fff">68 %</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;color:#9fb2ba;font-size:3.6mm">already full before it started</div>
+  </div>
+
+  <!-- ============ 3 · TWO OPTIONS  y275 h195 ============ -->
+  <div class="headnum" style="left:20mm;top:275mm;color:var(--blue)">02</div>
+  <div class="head" style="left:34mm;top:275mm">Two options — and each one has a victim</div>
+
+  <!-- RELEASE -->
+  <div style="left:20mm;top:288mm;width:270mm;height:182mm;background:var(--blue-l);border:.6mm solid var(--blue)"></div>
+  <div style="left:20mm;top:288mm;width:270mm;height:2.2mm;background:var(--blue)"></div>
+  <div class="head" style="left:30mm;top:297mm;color:var(--blue);font-size:8mm;letter-spacing:.02em">RELEASE</div>
+  <div class="small" style="left:30mm;top:308mm;width:250mm;font-style:italic">
+    Open the gates now. Let the flood pass through at full speed.
+  </div>
+  <svg style="left:30mm;top:318mm;width:250mm;height:34mm" viewBox="0 0 250 34">
+    <rect x="4" y="8" width="96" height="22" fill="#14607d" opacity=".30"/>
+    <rect x="100" y="4" width="9" height="26" fill="#14607d"/>
+    <path d="M109 19 L238 19" stroke="#14607d" stroke-width="7" stroke-linecap="round"/>
+    <path d="M230 12 L243 19 L230 26 Z" fill="#14607d"/>
+    <text x="4" y="5" style="font-family:IBM Plex Mono,monospace;font-size:5px;fill:#14607d">reservoir stays low</text>
+    <text x="140" y="31" style="font-family:IBM Plex Mono,monospace;font-size:5px;fill:#14607d">water goes down the river now</text>
+  </svg>
+
+  <div style="left:30mm;top:356mm;width:250mm">
+    <div class="small" style="position:static;font-weight:600;color:var(--blue);margin-bottom:2.6mm">✓ PROTECTS — THE DAM</div>
+    <div class="small bul" style="font-size:4.9mm">▪ The water level never goes above the <u>safe limit</u>.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ The dam stays inside its <u>safety margin</u>.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ No risk that the dam <u>breaks</u> and floods the whole city.</div>
+  </div>
+
+  <div style="left:30mm;top:396mm;width:250mm">
+    <div class="small" style="position:static;font-weight:600;color:var(--blue);margin-bottom:2.6mm">✗ COSTS — THE PEOPLE BELOW</div>
+    <div class="small bul" style="font-size:4.9mm">▪ The water reaches the houses <u>at once</u>.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ People are still at home — <u>no warning</u> has been given.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ <u>No buses and no shelters</u> are ready yet.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ People escape <u>during</u> the flood, not before it.</div>
+  </div>
+
+  <div style="left:30mm;top:444mm;width:250mm;height:20mm;background:#fff;border-left:1mm solid var(--blue);padding:3.6mm 5mm">
+    <div class="small" style="position:static;font-size:4.6mm">
+      In the same region, a reservoir manager was later <u>sent to court for not releasing water in time</u>.
+    </div>
+  </div>
+
+  <!-- HOLD -->
+  <div style="left:304mm;top:288mm;width:270mm;height:182mm;background:var(--red-l);border:.6mm solid var(--red)"></div>
+  <div style="left:304mm;top:288mm;width:270mm;height:2.2mm;background:var(--red)"></div>
+  <div class="head" style="left:314mm;top:297mm;color:var(--red);font-size:8mm;letter-spacing:.02em">HOLD</div>
+  <div class="small" style="left:314mm;top:308mm;width:250mm;font-style:italic">
+    Keep the gates almost closed. Let the reservoir take the flood.
+  </div>
+  <svg style="left:314mm;top:318mm;width:250mm;height:34mm" viewBox="0 0 250 34">
+    <rect x="4" y="4" width="96" height="26" fill="#a83a2c" opacity=".34"/>
+    <line x1="4" y1="9" x2="100" y2="9" stroke="#a83a2c" stroke-width="1" stroke-dasharray="4 3"/>
+    <rect x="100" y="0" width="9" height="30" fill="#a83a2c"/>
+    <path d="M109 19 L150 19" stroke="#a83a2c" stroke-width="2.5" stroke-dasharray="5 5" opacity=".55"/>
+    <text x="4" y="6.5" style="font-family:IBM Plex Mono,monospace;font-size:4.4px;fill:#a83a2c">design limit</text>
+    <text x="4" y="33" style="font-family:IBM Plex Mono,monospace;font-size:5px;fill:#a83a2c">water rises above the limit</text>
+    <text x="156" y="21" style="font-family:IBM Plex Mono,monospace;font-size:5px;fill:#a83a2c">rivers stay low — for now</text>
+  </svg>
+
+  <div style="left:314mm;top:356mm;width:250mm">
+    <div class="small" style="position:static;font-weight:600;color:var(--red);margin-bottom:2.6mm">✓ PROTECTS — THE PEOPLE BELOW</div>
+    <div class="small bul" style="font-size:4.9mm">▪ The settlements stay <u>dry</u>.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ Homes and property are <u>not touched</u>.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ The hours gained can be used to <u>warn and evacuate</u> people.</div>
+  </div>
+
+  <div style="left:314mm;top:396mm;width:250mm">
+    <div class="small" style="position:static;font-weight:600;color:var(--red);margin-bottom:2.6mm">✗ COSTS — THE DAM</div>
+    <div class="small bul" style="font-size:4.9mm">▪ The water rises <u>above the design level</u>.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ The dam is <u>36 years old</u> and was never rebuilt.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ If it breaks, the water is <u>no longer controlled</u>.</div>
+    <div class="small bul" style="font-size:4.9mm">▪ An uncontrolled wave would reach <u>the city itself</u>.</div>
+  </div>
+
+  <div style="left:314mm;top:444mm;width:250mm;height:20mm;background:#fff;border-left:1mm solid var(--red);padding:3.6mm 5mm">
+    <div class="small" style="position:static;font-size:4.6mm">
+      One week later the <u>Magadzhan dam upstream did break</u>. Three settlements were flooded.
+    </div>
+  </div>
+
+  <!-- converging lines -->
+  <svg style="left:20mm;top:470mm;width:554mm;height:14mm" viewBox="0 0 554 14" preserveAspectRatio="none">
+    <path d="M135 0 L277 13 L419 0" fill="none" stroke="#0f1a1f" stroke-width="1.6"/>
+  </svg>
+
+  <!-- ============ 03 · THE DECISION  y484 h94 ============ -->
+  <div style="left:20mm;top:484mm;width:554mm;height:94mm;background:var(--ink)"></div>
+  <div class="headnum" style="left:32mm;top:494mm;color:#6fc3e0">03</div>
+  <div class="head" style="left:46mm;top:494mm;color:#fff">The decision — 28 March 2024</div>
+
+  <div class="imgbox" style="left:32mm;top:505mm;width:150mm;height:68mm;background:#1c2a30">
+    <img src="../images/general_photo_1.jpg" alt="Водосброс плотины с козловым краном на гребне">
+  </div>
+
+  <div class="body" style="left:194mm;top:506mm;width:222mm;color:#dce6ea">
+    They took neither option cleanly. To enable the evacuation of residents downstream, the operator — <em>together with local authorities</em> — deliberately stored <b style="color:#fff">15 million m³ above the reservoir's design capacity</b>, accepting extra load on the dam to buy hours. Only then was discharge raised to <b style="color:#fff">1,000 m³/s</b>.
+  </div>
+  <div style="left:194mm;top:549mm;width:222mm;border-left:1mm solid #2a9bc4;padding-left:6mm">
+    <div class="small" style="position:static;color:#fff;font-size:4.7mm">
+      “As a result of the decision to release, the garden communities of Aktobe were flooded.”
+    </div>
+    <div class="cap" style="position:static;margin-top:2mm;color:#8fa6b0">Press service of the Prime Minister of Kazakhstan, 29 March 2024</div>
+  </div>
+
+  <div style="left:426mm;top:499mm;width:140mm;height:76mm;border-left:.5mm solid #3a4c54;padding-left:8mm">
+    <div class="cap" style="position:static;color:#8fa6b0;font-size:3.8mm">FROM DENIAL TO EVACUATION ORDER</div>
+    <div class="num" style="position:static;font-size:17mm;color:#fff;margin-top:3mm">23 h 25 min</div>
+
+    <div class="small" style="position:static;color:#dce6ea;margin-top:5mm;font-size:4.2mm;line-height:1.3">
+      <b style="color:#fff">27 Mar, 22:38</b> — “This audio is false. The reservoir is only 68 % full.”
+    </div>
+    <div class="small" style="position:static;color:#dce6ea;margin-top:2.6mm;font-size:4.2mm;line-height:1.3">
+      <b style="color:#ff9d8f">28 Mar, 22:03</b> — “We are forced to release water. Please evacuate.” <b style="color:#fff">Emergency evacuation starts.</b>
+    </div>
+    <div class="small" style="position:static;color:#dce6ea;margin-top:2.6mm;font-size:4.2mm;line-height:1.3">
+      <b style="color:#ff9d8f">Night 28 → 29 Mar</b> — the gates are open, the water is released.
+    </div>
+    <div class="cap" style="position:static;color:#8fa6b0;margin-top:3.4mm;font-size:3.5mm">
+      Timestamps from the official akimat channel. The exact hour the gate was opened has never been published.
+    </div>
+  </div>
+
+  <!-- ============ 04 · WHAT FOLLOWED  y586..748 ============ -->
+  <div class="headnum" style="left:20mm;top:586mm;color:var(--blue)">04</div>
+  <div class="head" style="left:34mm;top:586mm">What followed</div>
+
+  <!-- left: chart + stats -->
+  <div class="cap" style="left:20mm;top:598mm;width:170mm">PEOPLE IN EVACUATION CENTRES, 28→29 MARCH</div>
+  <div id="chartB" style="left:20mm;top:604mm;width:170mm;height:68mm"></div>
+
+  <div style="left:20mm;top:678mm;width:83mm;height:33mm;background:var(--tint);padding:3.4mm">
+    <div class="num" style="position:static;font-size:10mm;color:var(--red)">689</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;font-size:3.7mm">garden homes flooded</div>
+  </div>
+  <div style="left:107mm;top:678mm;width:83mm;height:33mm;background:var(--tint);padding:3.4mm">
+    <div class="num" style="position:static;font-size:10mm;color:var(--red)">2,870</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;font-size:3.7mm">evacuated within a day</div>
+  </div>
+  <div style="left:20mm;top:715mm;width:83mm;height:33mm;background:var(--tint);padding:3.4mm">
+    <div class="num" style="position:static;font-size:10mm;color:var(--blue)">0</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;font-size:3.7mm">lives lost</div>
+  </div>
+  <div style="left:107mm;top:715mm;width:83mm;height:33mm;background:var(--tint);padding:3.4mm">
+    <div class="num" style="position:static;font-size:10mm;color:var(--blue)">540 mln m³</div>
+    <div class="cap" style="position:static;margin-top:1.6mm;font-size:3.7mm">passed through — 2.2 reservoir volumes</div>
+  </div>
+
+  <!-- right: image cluster — maps first -->
+  <div class="imgbox" style="left:206mm;top:598mm;width:120mm;height:64mm">
+    <img src="../images/dam_map_black_white.jpg" alt="Схема: Актюбинское водохранилище, плотина и река Илек">
+  </div>
+  <div class="cap" style="left:206mm;top:664mm;width:120mm;font-size:3.5mm">
+    Map: the reservoir, the dam and the Ilek river below it
+  </div>
+
+  <div class="imgbox crop" style="left:330mm;top:598mm;width:120mm;height:64mm">
+    <img src="../images/dam_map_color.jpg" alt="Спутниковый снимок плотины и водосброса">
+  </div>
+  <div class="cap" style="left:330mm;top:664mm;width:120mm;font-size:3.5mm">
+    Google Maps satellite: the dam and its spillway
+  </div>
+
+  <div class="imgbox" style="left:454mm;top:598mm;width:120mm;height:64mm">
+    <img src="../images/map_regions_flood.jpg" alt="Карта Актобе с зонами затопления">
+  </div>
+  <div class="cap" style="left:454mm;top:664mm;width:120mm;font-size:3.5mm">
+    Map of the flooded areas of Aktobe
+  </div>
+
+  <div class="imgbox crop" style="left:206mm;top:678mm;width:120mm;height:48mm">
+    <img src="../images/general_photo_2.jpg" alt="Вид с воздуха: посёлок полностью под водой">
+  </div>
+  <div class="cap" style="left:206mm;top:728mm;width:120mm;font-size:3.5mm">
+    A whole settlement under water
+  </div>
+
+  <div class="imgbox crop" style="left:330mm;top:678mm;width:120mm;height:48mm">
+    <img src="../images/general_photo_3.jpg" alt="Дома, затопленные по окна">
+  </div>
+  <div class="cap" style="left:330mm;top:728mm;width:120mm;font-size:3.5mm">
+    Houses flooded to window level
+  </div>
+
+  <div class="imgbox crop" style="left:454mm;top:678mm;width:120mm;height:48mm">
+    <img src="../images/general_photo_4.jpg" alt="Возведение защитной дамбы из мешков с песком">
+  </div>
+  <div class="cap" style="left:454mm;top:728mm;width:120mm;font-size:3.5mm">
+    Sandbag barriers — 157,278 sacks laid in the region
+  </div>
+
+  <!-- ============ 05 · WIDER APPLICATIONS  y755..800 ============ -->
+  <div style="left:20mm;top:755mm;width:554mm;height:45mm;background:var(--tint)"></div>
+  <div class="headnum" style="left:28mm;top:760mm;color:var(--blue);font-size:5.4mm">05</div>
+  <div class="head" style="left:40mm;top:760mm;font-size:5.4mm">What should be done — anywhere, not only here</div>
+
+  <div style="left:28mm;top:770mm;width:170mm">
+    <div class="body" style="position:static;font-weight:700;color:var(--blue);font-size:4.9mm">1 · Remove the problem before it arrives</div>
+    <div class="small bul" style="font-size:4.2mm;margin-top:2.4mm">▪ Empty the reservoirs <u>before</u> the flood season.</div>
+    <div class="small bul" style="font-size:4.2mm">▪ Break the river ice early so it cannot form jams.</div>
+    <div class="small bul" style="font-size:4.2mm">▪ Before 2025 the reservoirs were pre-emptied to free <u>382 million m³</u>.</div>
+  </div>
+
+  <div style="left:212mm;top:770mm;width:170mm">
+    <div class="body" style="position:static;font-weight:700;color:var(--blue);font-size:4.9mm">2 · Keep the structures under control</div>
+    <div class="small bul" style="font-size:4.2mm;margin-top:2.4mm">▪ Inspect and repair gates, cranes and dams <u>every year</u> — not after a disaster.</div>
+    <div class="small bul" style="font-size:4.2mm">▪ In 2024 the crane needed to open the second gate <u>failed at the worst moment</u>.</div>
+    <div class="small bul" style="font-size:4.2mm">▪ 537 structures in Kazakhstan still need repair; 322 threaten <u>1.5 million people</u>.</div>
+  </div>
+
+  <div style="left:396mm;top:770mm;width:170mm">
+    <div class="body" style="position:static;font-weight:700;color:var(--blue);font-size:4.9mm">3 · Be ready for the emergency</div>
+    <div class="small bul" style="font-size:4.2mm;margin-top:2.4mm">▪ Plan the evacuation <u>before</u> the water comes: routes, buses, shelters.</div>
+    <div class="small bul" style="font-size:4.2mm">▪ Warn people early and clearly, so the state and the population <u>understand each other</u>.</div>
+    <div class="small bul" style="font-size:4.2mm">▪ A warning works only if people <u>believe it</u> and can act on it.</div>
+  </div>
+
+  <!-- ============ SOURCES ============ -->
+  <div style="left:20mm;top:806mm;width:554mm;height:.4mm;background:var(--rule)"></div>
+  <div class="cap" style="left:20mm;top:810mm;width:554mm;font-size:3.4mm;line-height:1.35">
+    <b>Sources.</b> primeminister.kz 29.03.2024 &amp; 02.04.2024 (release decision, causation, 15 mln m³ above design capacity) · Ministry of Water Resources, gov.kz 02.04.2024 (245 and 246 mln m³) · Telegram @aqtobe_oblysy_akimdigi posts 3447, 3450, 3480, 3492, 3494 and @qr_tjm 10963 (publication timestamps) · Kazhydromet forecast 04.03.2024 and annual snow bulletin 2024 · Tengrinews 08.04.2024 (gates, gantry crane) · Kapital.kz 08.08.2023 (537 structures) · Bes.media 06.03.2025 (22 criminal cases) · Zakon.kz 07.02.2025 (conviction for failing to release) · ORDA 06.04.2024 (689 homes) · NSPE Code of Ethics, Canon 1 · RAEng, <em>Engineering Ethics in Practice</em> (2011)
+  </div>
+
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+  var poster=document.getElementById('poster'), scaler=document.getElementById('scaler'), stage=document.querySelector('.stage');
+  function fit(){
+    if(window.matchMedia&&window.matchMedia('print').matches) return;
+    var avail=stage.clientWidth-32, w=poster.offsetWidth, h=poster.offsetHeight;
+    if(!w) return;
+    var k=Math.min(1, avail/w);
+    scaler.style.transform='scale('+k+')';
+    scaler.style.height=(h*k)+'px'; scaler.style.width=w+'px';
+  }
+  window.addEventListener('resize',fit); window.addEventListener('load',fit);
+  fit(); setTimeout(fit,300); setTimeout(fit,1200);
+  var b=document.getElementById('pr'); if(b) b.addEventListener('click',function(){try{window.print();}catch(e){}});
+
+  /* volumes */
+  (function(){
+    var el=document.getElementById('chartD'); if(!el) return;
+    var data=[{l:'Design volume',v:245},{l:'Inflow 27–29 Mar',v:200},{l:'Released 27 Mar – 2 Apr',v:246},{l:'Passed in the 2024 flood',v:540,e:1}], max=540, h='';
+    data.forEach(function(d,i){
+      h+='<div style="position:absolute;left:0;top:'+(i*16.5)+'mm;width:270mm">'
+        +'<div style="position:static;font-family:var(--serif);font-size:4.2mm;color:var(--ink2);margin-bottom:1.2mm">'+d.l+'</div>'
+        +'<div style="position:static;display:flex;align-items:center;gap:3mm">'
+        +'<div style="position:static;height:5mm;width:'+(d.v/max*205).toFixed(1)+'mm;background:var(--blue);opacity:'+(d.e?1:.42)+'"></div>'
+        +'<div style="position:static;font-family:var(--mono);font-weight:600;font-size:4.3mm">'+d.v+'</div></div></div>';
+    });
+    h+='<div style="position:absolute;left:'+(245/max*205).toFixed(1)+'mm;top:0;height:62mm;width:0;border-left:.5mm dashed var(--red)"></div>';
+    el.innerHTML=h;
+  })();
+
+  /* evacuation */
+  (function(){
+    var el=document.getElementById('chartB'); if(!el) return;
+    var W=170,H=68,ml=20,mr=6,mt=6,mb=14;
+    var pw=W-ml-mr, ph=H-mt-mb, maxY=3000, span=17;
+    var P=[{h:.05,v:155},{h:5,v:1193},{h:7,v:1417},{h:12,v:1828},{h:16.97,v:2870}];
+    var X=function(h){return ml+h/span*pw;}, Y=function(v){return mt+ph*(1-v/maxY);};
+    var s='<svg viewBox="0 0 '+W+' '+H+'" style="position:static;width:100%;height:100%">';
+    [0,1000,2000,3000].forEach(function(g){
+      s+='<line x1="'+ml+'" y1="'+Y(g)+'" x2="'+(ml+pw)+'" y2="'+Y(g)+'" stroke="#c8d3d6" stroke-width=".35"/>'
+        +'<text x="'+(ml-2)+'" y="'+(Y(g)+1.4)+'" text-anchor="end" style="font-family:IBM Plex Mono,monospace;font-size:3.6px;fill:#71818a">'+g+'</text>';
+    });
+    [[0,'22:00'],[5,'03:00'],[10,'08:00'],[16,'14:00']].forEach(function(t){
+      s+='<text x="'+X(t[0])+'" y="'+(mt+ph+5.5)+'" text-anchor="middle" style="font-family:IBM Plex Mono,monospace;font-size:3.6px;fill:#71818a">'+t[1]+'</text>';
+    });
+    var d=''; P.forEach(function(p,i){ d+=(i?'L':'M')+X(p.h).toFixed(1)+' '+Y(p.v).toFixed(1)+' '; });
+    s+='<path d="'+d+'" fill="none" stroke="#a83a2c" stroke-width="1.3" stroke-linejoin="round"/>';
+    P.forEach(function(p){ s+='<circle cx="'+X(p.h).toFixed(1)+'" cy="'+Y(p.v).toFixed(1)+'" r="1.7" fill="#a83a2c"/>'; });
+    s+='<text x="'+X(16.97)+'" y="'+(Y(2870)-3)+'" text-anchor="end" style="font-family:Archivo,sans-serif;font-weight:700;font-size:5.4px;fill:#0f1a1f">2 870</text>';
+    s+='<text x="'+X(.05)+'" y="'+(Y(155)-3)+'" style="font-family:IBM Plex Mono,monospace;font-size:3.9px;fill:#0f1a1f">155</text>';
+    s+='</svg>';
+    el.innerHTML=s;
+  })();
+})();
+</script>
+
+</body>
+</html>
