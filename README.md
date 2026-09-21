@@ -10,7 +10,9 @@
 ## Что здесь лежит
 
 ```
-├── Aktobe_Poster_A1.pdf      ← готовый файл для печати (594 × 841 мм)
+├── Aktobe_Poster_A1.pdf          ← постер для печати, A1 (594 × 841 мм), 1 стр.
+├── Aktobe_Research_Brief.pdf     ← исследование целиком, A4, 36 стр.
+├── Aktobe_Charts_Gallery.pdf     ← варианты графиков, A4, 6 стр.
 ├── poster/
 │   ├── poster.html           ← исходник постера, здесь правится всё
 │   ├── make-pdf.ps1          ← сборка PDF на Windows

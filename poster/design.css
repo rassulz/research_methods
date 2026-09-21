@@ -1,0 +1,172 @@
+/* The physical A1 layout is shared by the screen preview and print. */
+:root {
+  --ink: #253c3a;
+  --ink2: #4e5a55;
+  --ink3: #69736c;
+  --paper: #fffdf8;
+  --tint: #f0efe7;
+  --rule: #d7dad0;
+  --blue: #326e69;
+  --blue-l: #edf3ef;
+  --red: #a35d45;
+  --red-l: #f8eee6;
+}
+body { background: #e9e8e1; color: var(--ink); }
+.bar { background: #faf9f5; color: var(--ink); border-bottom: 1px solid #d7dad0; padding: 16px 32px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; margin-right: auto; }
+.brand-mark { width: 34px; height: 34px; border: 1px solid #9dafa4; border-radius: 50%; display: grid; place-items: center; color: var(--blue); font-family: Georgia, serif; font-size: 24px; }
+.brand small { display: block; margin-top: 4px; font-size: 11px; font-weight: 400; color: var(--ink3); }
+.bar button { background: var(--ink); color: #fffdf8; border: 1px solid var(--ink); border-radius: 7px; padding: 10px 16px; transition: background .15s; }
+.bar button:hover { background: var(--blue); }
+.zoom-controls { display: flex; align-items: center; gap: 5px; }
+.zoom-controls button { background: transparent; color: var(--ink); border-color: #d7dad0; padding: 8px 11px; }
+.zoom-controls button:hover { background: #e9ede5; }
+.zoom-controls button:disabled { opacity: .35; cursor: default; }
+.zoom-controls output { min-width: 46px; text-align: center; font-size: 12px; font-variant-numeric: tabular-nums; }
+button:focus-visible, summary:focus-visible { outline: 3px solid #a35d45; outline-offset: 4px; }
+.intro { max-width: 1160px; margin: 32px auto 0; padding: 0 28px; display: flex; justify-content: space-between; gap: 24px; align-items: end; font-family: var(--sans); }
+.intro .eyebrow { display: block; color: var(--blue); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px; }
+.intro h1 { font: 400 28px/1.2 var(--serif); letter-spacing: -.025em; }
+.intro p { color: var(--ink3); font-size: 12px; margin-top: 7px; line-height: 1.6; }
+.print-help { max-width: 340px; font: 12px/1.6 var(--sans); color: var(--ink2); }
+.print-help summary { cursor: pointer; text-align: right; }
+.stage { padding: 24px 28px 48px; overflow: auto; display: block; }
+.scaler { position: relative; margin: 0 auto; transform: none !important; }
+.poster { transform-origin: top left; }
+.poster u { text-decoration: none; font-weight: 600; }
+.poster .title { font-family: var(--serif); font-weight: 600; font-size: 25mm; letter-spacing: -.055em; }
+.poster .subtitle { font-weight: 500; font-size: 6.5mm; line-height: 1.3; }
+.poster .byline { font-family: var(--sans); font-size: 4mm; }
+.poster .head { font-weight: 600; letter-spacing: -.015em; }
+.poster .headnum { font-size: 5mm; padding-top: .9mm; }
+.poster .cap { font-family: var(--sans); letter-spacing: .015em; }
+.poster .num { font-weight: 600; letter-spacing: -.035em; }
+.poster .masthead { background: transparent !important; border-bottom: .4mm solid var(--rule); }
+.poster .masthead-rule { height: 1mm !important; background: var(--blue) !important; }
+.poster .masthead-accent { display: none; }
+.poster .question {
+  left: 360mm !important; width: 200mm !important;
+  top: 28mm !important; height: 61mm !important;
+  background: #eaf0e5; border: .35mm solid #cfdbca !important;
+  border-left: 1mm solid #729681 !important;
+  border-radius: 2.5mm; padding: 6mm 7mm !important;
+}
+.poster .question > .cap { color: var(--blue); letter-spacing: .1em; }
+.poster .question .body { color: var(--ink); font-style: italic; font-size: 5.7mm !important; line-height: 1.35; }
+.poster .context-panel { border-left-width: .7mm !important; border-radius: 0 3mm 3mm 0; }
+.poster .cause { border-top: .45mm solid #aabfb1 !important; padding-top: 4mm; }
+.poster .cause > .num { font-family: var(--serif); font-weight: 400; }
+.poster .cause > .body { font-size: 5.7mm; }
+.poster .option-panel { border: .35mm solid #c9d9cf !important; border-radius: 3mm; }
+.poster .option-panel.hold { border-color: #e4cdbd !important; }
+.poster .option-rule { height: .8mm !important; border-radius: 3mm 3mm 0 0; }
+.poster .decision-panel { border-radius: 3mm; }
+.poster .imgbox { border-radius: 1.5mm; }
+.poster .cluster-card {
+  position: absolute; margin: 0; overflow: hidden;
+  background: #fffdf8; border: .5mm solid #859b8d; border-radius: 2mm;
+}
+.poster .cluster-card .imgbox {
+  position: static; width: 100%; border-radius: 0;
+  border-bottom: .35mm solid #b8c5b9;
+}
+.poster .cluster-card figcaption {
+  padding: 1.4mm 2mm; font: 500 3.5mm/1.25 var(--sans); color: var(--ink2);
+}
+.poster .lessons-panel { border-radius: 3mm; }
+.poster .stat { border-radius: 2mm; }
+.poster #chartB { background: #fffdf8; border: .5mm solid #859b8d; border-radius: 2mm; overflow: hidden; }
+#chartB text { font-family: var(--sans); }
+#chartB .chart-axis { font-size: 3.4px; fill: #69736c; font-variant-numeric: tabular-nums; }
+#chartB .chart-value { font-family: var(--mono); font-size: 4.2px; font-weight: 500; fill: var(--ink); font-variant-numeric: tabular-nums; }
+#chartB .chart-date { font-size: 3.1px; letter-spacing: .35px; fill: #69736c; }
+.poster .key-figures {
+  left: 20mm; top: 239mm; width: 554mm; height: 31mm;
+  padding: 3mm 6mm; background: var(--ink); border-radius: 2mm;
+  color: #fffdf8; font-family: var(--sans);
+}
+.poster .key-figures div { position: static; }
+.key-figures .figures-heading {
+  display: flex; align-items: center; gap: 5mm;
+  font-size: 2.8mm; line-height: 1; letter-spacing: .13em; color: #b8d1c4;
+  margin-bottom: 2mm;
+}
+.figures-heading::after { content: ""; height: .25mm; flex: 1; background: #547067; }
+.key-figures .figures-grid { display: grid; grid-template-columns: 1fr .95fr 1.35fr 1fr; }
+.key-figures .figure-item { padding: 0 5mm; border-left: .3mm solid #587267; }
+.key-figures .figure-item:first-child { padding-left: 0; border-left: 0; }
+.key-figures .figure-item:last-child { padding-right: 0; }
+.key-figures .figure-value {
+  font-size: 11.8mm; line-height: 1.05; font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums; letter-spacing: -.035em;
+  white-space: nowrap;
+}
+.key-figures .figure-unit { font-size: 5.4mm; font-weight: 500; letter-spacing: 0; color: #c5d9ce; }
+.key-figures .figure-approx { font-size: 8mm; font-weight: 500; color: #c5d9ce; }
+.key-figures .figure-caption { margin-top: 1.5mm; font-size: 3.4mm; line-height: 1.3; color: #edf3ee; }
+.key-figures .figure-detail { color: #b9cec2; }
+.sources a { color: var(--blue); text-decoration: underline; text-decoration-color: #a8bfb2; text-underline-offset: .6mm; }
+.sources a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.sources a:focus-visible { outline: .5mm solid var(--red); outline-offset: .6mm; }
+.sources .source-separator { color: #9ba69b; }
+.water-diagram text { font-family: var(--sans); font-weight: 500; }
+.water-diagram .diagram-caption { font-size: 4.2px; fill: var(--ink2); }
+.water-diagram .diagram-label { font-size: 3.6px; fill: #657267; }
+.water-diagram .diagram-limit { font-size: 3.6px; fill: var(--red); }
+.water-diagram .flow-line { fill: none; stroke: var(--blue); stroke-width: .6; stroke-linecap: round; stroke-linejoin: round; }
+/* Section boundaries: a shared number badge, heading rule and quiet surface. */
+.poster .section-surface {
+  left: 16mm; width: 562mm; border-radius: 3mm;
+  border: .65mm solid #859b8d; pointer-events: none;
+}
+.poster .section-context { top: 100mm; height: 171mm; background: #f4f6ef; }
+.poster .section-options { top: 273mm; height: 198mm; background: #fffdf8; border-color: #859b8d; }
+.poster .section-outcomes { top: 582mm; height: 169mm; background: #f1f5f2; }
+.poster > .headnum {
+  width: 9mm; height: 9mm; margin-top: -1mm; padding: 0;
+  display: grid; place-items: center; border-radius: 1.6mm;
+  background: var(--blue); color: #fffdf8 !important;
+  font-size: 4.4mm !important; line-height: 1; font-weight: 500;
+}
+.poster > .headnum[style*="top:494mm"] { background: #e3eee5; color: var(--ink) !important; }
+.poster > .headnum[style*="top:760mm"] { width: 7.5mm; height: 7.5mm; font-size: 3.8mm !important; }
+.poster > .headnum + .head {
+  width: 540mm; display: flex; align-items: center; gap: 7mm;
+  white-space: nowrap;
+}
+.poster > .headnum + .head::after { content: ""; flex: 1; border-top: .35mm solid #b9cbbf; }
+.poster > .headnum + .head[style*="top:494mm"] { width: 516mm; }
+.poster > .headnum + .head[style*="top:494mm"]::after { border-color: #68847c; }
+.poster > .headnum + .head[style*="top:760mm"] { width: 526mm; }
+.poster .decision-panel { left: 16mm !important; width: 562mm !important; border: .65mm solid #152c29; }
+.poster .lessons-panel {
+  left: 16mm !important; width: 562mm !important; height: 48mm !important;
+  background: #eeeee2 !important; border: .65mm solid #859b8d;
+}
+.poster .references { left: 20mm; top: 809mm; width: 554mm; color: var(--ink2); font-family: var(--sans); }
+.poster .references-heading { display: block; font-size: 3mm; line-height: 1; margin-bottom: 1.5mm; color: var(--ink); }
+.poster .reference-grid { position: static; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; }
+.poster .reference-column { position: static; }
+.poster .reference-column p { font-size: 2.6mm; line-height: 1.3; margin: 0 0 .7mm; padding-left: 5mm; text-indent: -5mm; }
+.viewer-footer { text-align: center; font: 11px/1.6 var(--sans); color: var(--ink3); padding: 0 24px 28px; }
+@media screen { .poster { box-shadow: 0 4px 8px #253c3a08, 0 18px 60px #253c3a14; } }
+@media (max-width: 640px) {
+  .bar { padding: 12px 16px; gap: 12px; }
+  .brand { flex: 1; min-width: 180px; }
+  .brand b { font-size: 13px; }
+  .zoom-controls { order: 3; width: 100%; justify-content: center; }
+  .bar > button { font-size: 12px; padding: 9px 12px; }
+  .intro { margin-top: 24px; padding: 0 16px; display: block; }
+  .intro h1 { font-size: 25px; }
+  .print-help { margin-top: 12px; }
+  .print-help summary { text-align: left; }
+  .stage { padding: 20px 12px 32px; }
+}
+@media print {
+  html, body { width: 594mm; height: 841mm; margin: 0; background: #fff; }
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .bar, .intro, .viewer-footer { display: none !important; }
+  .stage { padding: 0; overflow: visible; }
+  .scaler { width: 594mm !important; height: 841mm !important; margin: 0; }
+  .poster { transform: none !important; box-shadow: none; }
+}
